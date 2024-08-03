@@ -77,7 +77,7 @@ const Logo = ({ w, h }) => {
                                         opacity="1"
                                         transform="matrix(1,0,0,1,0,0)"
                                         fill="#000000"
-                                        class="wordmark-text-0"
+                                        className="wordmark-text-0"
                                         data-fill-palette-color="primary"
                                       ></path>
                                     </svg>
@@ -88,10 +88,10 @@ const Logo = ({ w, h }) => {
                                       x="236.2607"
                                       y="0"
                                       viewBox="0.191 27.762 99.809 45.998999999999995"
-                                      enable-background="new 0 0 100 100"
+                                      enableBackground="new 0 0 100 100"
                                       height="58.733399999999996"
                                       width="127.44020349572817"
-                                      class="icon-dxe-0"
+                                      className="icon-dxe-0"
                                       data-fill-palette-color="accent"
                                       id="dxe-0"
                                     ></svg>
@@ -188,7 +188,7 @@ const Logo = ({ w, h }) => {
                                               opacity="1"
                                               transform="matrix(1,0,0,1,0,0)"
                                               fill="black"
-                                              class="wordmark-text-0"
+                                              className="wordmark-text-0"
                                             ></path>
                                           </svg>
                                         </g>
@@ -198,10 +198,10 @@ const Logo = ({ w, h }) => {
                                             x="236.2607"
                                             y="0"
                                             viewBox="0.191 27.762 99.809 45.998999999999995"
-                                            enable-background="new 0 0 100 100"
+                                            enableBackground="new 0 0 100 100"
                                             height="58.733399999999996"
                                             width="127.44020349572817"
-                                            class="icon-dxe-0"
+                                            className="icon-dxe-0"
                                             data-fill-palette-color="accent"
                                             id="SvgjsSvg9568"
                                           >
@@ -235,7 +235,7 @@ const Logo = ({ w, h }) => {
                                           opacity="1"
                                           transform="matrix(1,0,0,1,0,0)"
                                           fill="white"
-                                          class="slogan-text-1"
+                                          className="slogan-text-1"
                                           id="SvgjsPath9567"
                                         ></path>
                                       </svg>
@@ -269,9 +269,9 @@ const Logo = ({ w, h }) => {
                 y2="0.5"
                 id="634b6611-e079-42de-9194-288c2579fd34"
               >
-                <stop stop-color="#26282a" offset="0"></stop>
-                <stop stop-color="#9e9fa0" offset="0.498"></stop>
-                <stop stop-color="#26282a" offset="1"></stop>
+                <stop stopColor="#26282a" offset="0"></stop>
+                <stop stopColor="#9e9fa0" offset="0.498"></stop>
+                <stop stopColor="#26282a" offset="1"></stop>
               </linearGradient>
               <rect
                 width="363.7009034957282"
@@ -344,7 +344,7 @@ const Logo = ({ w, h }) => {
                                               opacity="1"
                                               transform="matrix(1,0,0,1,0,0)"
                                               fill="black"
-                                              class="wordmark-text-0"
+                                              className="wordmark-text-0"
                                             ></path>
                                           </svg>
                                         </g>
@@ -354,10 +354,10 @@ const Logo = ({ w, h }) => {
                                             x="236.2607"
                                             y="0"
                                             viewBox="0.191 27.762 99.809 45.998999999999995"
-                                            enable-background="new 0 0 100 100"
+                                            enableBackground="new 0 0 100 100"
                                             height="58.733399999999996"
                                             width="127.44020349572817"
-                                            class="icon-dxe-0"
+                                            className="icon-dxe-0"
                                             data-fill-palette-color="accent"
                                             id="SvgjsSvg9579"
                                           >
@@ -463,7 +463,7 @@ const Logo = ({ w, h }) => {
                                                     opacity="1"
                                                     transform="matrix(1,0,0,1,0,0)"
                                                     fill="black"
-                                                    class="wordmark-text-0"
+                                                    className="wordmark-text-0"
                                                   ></path>
                                                 </svg>
                                               </g>
@@ -473,10 +473,10 @@ const Logo = ({ w, h }) => {
                                                   x="236.2607"
                                                   y="0"
                                                   viewBox="0.191 27.762 99.809 45.998999999999995"
-                                                  enable-background="new 0 0 100 100"
+                                                  enableBackground="new 0 0 100 100"
                                                   height="58.733399999999996"
                                                   width="127.44020349572817"
-                                                  class="icon-dxe-0"
+                                                  className="icon-dxe-0"
                                                   data-fill-palette-color="accent"
                                                   id="SvgjsSvg9574"
                                                 >
@@ -510,7 +510,7 @@ const Logo = ({ w, h }) => {
                                                 opacity="1"
                                                 transform="matrix(1,0,0,1,0,0)"
                                                 fill="black"
-                                                class="slogan-text-1"
+                                                className="slogan-text-1"
                                                 id="SvgjsPath9573"
                                               ></path>
                                             </svg>
@@ -554,9 +554,9 @@ const Logo = ({ w, h }) => {
                 y2="0.5"
                 id="4ba4ef76-0448-44b5-90d3-44472b5a0f13"
               >
-                <stop stop-color="#0f3054" offset="0"></stop>
-                <stop stop-color="#3b8dcb" offset="0.498"></stop>
-                <stop stop-color="#0f3054" offset="1"></stop>
+                <stop stopColor="#0f3054" offset="0"></stop>
+                <stop stopColor="#3b8dcb" offset="0.498"></stop>
+                <stop stopColor="#0f3054" offset="1"></stop>
               </linearGradient>
               <rect
                 width="363.7009034957282"
