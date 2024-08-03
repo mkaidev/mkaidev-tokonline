@@ -91,14 +91,17 @@ const Header = () => {
             )}
           </div>
 
-          <Link to={"/cart"} className="text-2xl relative">
-            <span>
-              <FaShoppingCart />
-            </span>
-            <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3">
-              <p className="text-sm">0</p>
-            </div>
-          </Link>
+          {user?._id && (
+            <Link to={"/cart"} className="text-2xl relative">
+              <span>
+                <FaShoppingCart />
+              </span>
+
+              <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3">
+                <p className="text-sm">0</p>
+              </div>
+            </Link>
+          )}
 
           <div>
             {user?._id ? (

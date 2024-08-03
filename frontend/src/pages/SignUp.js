@@ -73,7 +73,7 @@ const SignUp = () => {
 
   return (
     <section id="signup">
-      <div className="mx-auto container p-2">
+      <div className="min-h-[calc(100vh-120px)] mx-auto container p-2">
         <div className="bg-white p-2 w-full max-w-sm mx-auto">
           <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-full">
             <div>
@@ -81,7 +81,7 @@ const SignUp = () => {
             </div>
             <form>
               <label>
-                <div className="text-sm bg-opacity-80 bg-slate-200 pb-2 pt-2 cursor-pointer text-center absolute bottom-0 w-full">
+                <div className="text-xs bg-opacity-80 bg-slate-200 pb-2 pt-2 cursor-pointer text-center absolute bottom-2 w-full">
                   Upload Photo
                 </div>
                 <input
@@ -168,7 +168,7 @@ const SignUp = () => {
               </div>
             </div>
 
-            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-3">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-110 transition-all mx-auto block mt-4">
               Sign Up
             </button>
           </form>
