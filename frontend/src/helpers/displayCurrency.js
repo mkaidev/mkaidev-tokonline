@@ -1,4 +1,4 @@
-const displayINRCurrency = (num) => {
+const displayCurrency = (num) => {
   const formatter = new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -8,4 +8,4 @@ const displayINRCurrency = (num) => {
   return formatter.format(num);
 };
 
-export default displayINRCurrency;
+export default displayCurrency;
