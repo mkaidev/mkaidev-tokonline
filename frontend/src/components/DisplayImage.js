@@ -12,7 +12,7 @@ const DisplayImage = ({ imgUrl, onClose }) => {
           <CgClose />
         </div>
 
-        <div className="flex justify-center p-4 max-w-[70vh] max-h-[70vh]">
+        <div className="flex justify-center p-4 overflow-y-scroll max-w-[70vh] max-h-[70vh]">
           <img src={imgUrl} className="w-full h-full" alt="product" />
         </div>
       </div>
