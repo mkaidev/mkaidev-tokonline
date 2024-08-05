@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import fetchCategoryWiseProduct from "../helpers/fetchCategoryWiseProduct";
-import displayINRCurrency from "../helpers/displayCurrency";
+import displayCurrency from "../helpers/displayCurrency";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import addToCart from "../helpers/addToCart";
@@ -65,7 +65,10 @@ const VerticalCardProduct = ({ category, heading }) => {
         {loading
           ? loadingList.map((product, index) => {
               return (
-                <div className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow ">
+                <div
+                  key={product?.loadingList + index}
+                  className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow"
+                >
                   <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center animate-pulse"></div>
                   <div className="p-4 grid gap-3">
                     <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black p-1 py-2 animate-pulse rounded-full bg-slate-200">
@@ -84,8 +87,9 @@ const VerticalCardProduct = ({ category, heading }) => {
           : data.map((product, index) => {
               return (
                 <Link
+                  key={product?.data + index}
                   to={"product/" + product?._id}
-                  className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow "
+                  className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow"
                 >
                   <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
                     <img
@@ -103,10 +107,10 @@ const VerticalCardProduct = ({ category, heading }) => {
                     </p>
                     <div className="flex gap-3">
                       <p className="text-red-600 font-medium">
-                        {displayINRCurrency(product?.sellingPrice)}
+                        {displayCurrency(product?.sellingPrice)}
                       </p>
                       <p className="text-slate-500 line-through">
-                        {displayINRCurrency(product?.price)}
+                        {displayCurrency(product?.price)}
                       </p>
                     </div>
                     <button

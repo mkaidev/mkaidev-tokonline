@@ -19,7 +19,10 @@ const VerticalCard = ({ loading, data = [] }) => {
       {loading
         ? loadingList.map((product, index) => {
             return (
-              <div className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow ">
+              <div
+                key={product?.loadingList + index}
+                className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow "
+              >
                 <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center animate-pulse"></div>
                 <div className="p-4 grid gap-3">
                   <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black p-1 py-2 animate-pulse rounded-full bg-slate-200">
@@ -38,6 +41,7 @@ const VerticalCard = ({ loading, data = [] }) => {
         : data.map((product, index) => {
             return (
               <Link
+                key={product?.data + index}
                 to={"/product/" + product?._id}
                 className="w-full min-w-[280px]  md:min-w-[300px] max-w-[280px] md:max-w-[300px]  bg-white rounded-sm shadow "
                 onClick={scrollTop}
