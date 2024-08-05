@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import image1 from "../assets/banner/img1.webp";
-import image2 from "../assets/banner/img2.webp";
+import image1 from "../assets/banner/img1.jpg";
+import image2 from "../assets/banner/img2.jpg";
 import image3 from "../assets/banner/img3.jpg";
-import image4 from "../assets/banner/img4.jpg";
-import image5 from "../assets/banner/img5.webp";
 
 import image1Mobile from "../assets/banner/img1_mobile.jpg";
-import image2Mobile from "../assets/banner/img2_mobile.webp";
+import image2Mobile from "../assets/banner/img2_mobile.jpg";
 import image3Mobile from "../assets/banner/img3_mobile.jpg";
-import image4Mobile from "../assets/banner/img4_mobile.jpg";
-import image5Mobile from "../assets/banner/img5_mobile.png";
 
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleLeft } from "react-icons/fa6";
@@ -17,15 +13,9 @@ import { FaAngleLeft } from "react-icons/fa6";
 const BannerProduct = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
-  const desktopImages = [image1, image2, image3, image4, image5];
+  const desktopImages = [image1, image2, image3];
 
-  const mobileImages = [
-    image1Mobile,
-    image2Mobile,
-    image3Mobile,
-    image4Mobile,
-    image5Mobile,
-  ];
+  const mobileImages = [image1Mobile, image2Mobile, image3Mobile];
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const nextImage = () => {
@@ -81,7 +71,7 @@ const BannerProduct = () => {
                 key={imageURl}
                 style={{ transform: `translateX(-${currentImage * 100}%)` }}
               >
-                <img src={imageURl} className="w-full h-full" alt="" />
+                <img src={imageURl} className="w-full h-full" alt="banner" />
               </div>
             );
           })}
@@ -98,8 +88,8 @@ const BannerProduct = () => {
               >
                 <img
                   src={imageURl}
-                  className="w-full h-full object-cover"
-                  alt=""
+                  className="w-full h-full object-fill"
+                  alt="banner"
                 />
               </div>
             );
