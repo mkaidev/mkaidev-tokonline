@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Logo from "./Logo";
-import { Link, useNavigate } from "react-router-dom";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
+import Logo from "./Logo";
 import SummaryApi from "../common";
 import { setUserDetails } from "../store/userSlice";
 import ROLE from "../common/role";
+import Context from "../context";
 
 const Header = () => {
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [menuDisplay, setMenuDisplay] = useState(false);
+  const context = useContext(Context);
+  const searchInput = useLocation();
+  const URLSearch = new URLSearchParams(searchInput?.search);
+  const searchQuery = URLSearch.getAll("q");
+  const [search, setSearch] = useState(searchQuery);
 
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
@@ -35,6 +41,16 @@ const Header = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    const { value } = e.target;
+    setSearch(value);
+
+    if (value) {
+      navigate(`/search?q=${value}`);
+    } else {
+      navigate("/search");
+    }
+  };
   return (
     <header className="h-16 shadow-md bg-white fixed w-full z-40">
       <div className=" h-full container mx-auto flex items-center px-4 justify-between">
@@ -49,6 +65,8 @@ const Header = () => {
             type="text"
             placeholder="search product here..."
             className="w-full outline-none"
+            onChange={handleSearch}
+            value={search}
           />
           <div className="text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white">
             <GrSearch />
@@ -96,7 +114,7 @@ const Header = () => {
               </span>
 
               <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3">
-                <p className="text-sm">0</p>
+                <p className="text-sm">{context?.cartProductCount}</p>
               </div>
             </Link>
           )}

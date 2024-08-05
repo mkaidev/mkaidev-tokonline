@@ -28,7 +28,7 @@ const CategoryList = () => {
               return (
                 <div
                   className="h-16 w-16 md:w-20 md:h-20 rounded-full overflow-hidden bg-slate-200 animate-pulse"
-                  key={"categoryLoading" + index}
+                  key={el + "categoryLoading" + index}
                 ></div>
               );
             })
@@ -37,7 +37,7 @@ const CategoryList = () => {
                 <Link
                   to={"/product-category?category=" + product?.category}
                   className="cursor-pointer"
-                  key={product?.category}
+                  key={product?.category + index}
                 >
                   <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden p-4 bg-slate-200 flex items-center justify-center">
                     <img

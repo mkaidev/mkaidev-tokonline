@@ -51,34 +51,28 @@ const ProductDetails = () => {
     setActiveImage(dataReponse?.data?.productImage[0]);
   };
 
-  console.log("data", data);
-
   useEffect(() => {
     fetchProductDetails();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [params]);
 
   const handleMouseEnterProduct = (imageURL) => {
     setActiveImage(imageURL);
   };
 
-  const handleZoomImage = useCallback(
-    (e) => {
-      setZoomImage(true);
-      const { left, top, width, height } = e.target.getBoundingClientRect();
-      console.log("coordinate", left, top, width, height);
+  const handleZoomImage = useCallback((e) => {
+    setZoomImage(true);
+    const { left, top, width, height } = e.target.getBoundingClientRect();
+    console.log("coordinate", left, top, width, height);
 
-      const x = (e.clientX - left) / width;
-      const y = (e.clientY - top) / height;
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
 
-      setZoomImageCoordinate({
-        x,
-        y,
-      });
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [zoomImageCoordinate]
-  );
+    setZoomImageCoordinate({
+      x,
+      y,
+    });
+  }, []);
 
   const handleLeaveImageZoom = () => {
     setZoomImage(false);
@@ -98,7 +92,7 @@ const ProductDetails = () => {
   return (
     <div className="container mx-auto p-4">
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
-        {/***product Image */}
+        {/** product Image */}
         <div className="h-96 flex flex-col lg:flex-row-reverse gap-4">
           <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 relative p-2">
             <img
@@ -109,7 +103,7 @@ const ProductDetails = () => {
               alt="product"
             />
 
-            {/**product zoom */}
+            {/** product zoom */}
             {zoomImage && (
               <div className="hidden lg:block absolute min-w-[500px] overflow-hidden min-h-[400px] bg-slate-200 p-1 -right-[510px] top-0">
                 <div
@@ -161,18 +155,16 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/***product details */}
+        {/** product details */}
         {loading ? (
           <div className="grid gap-1 w-full">
             <p className="bg-slate-200 animate-pulse  h-6 lg:h-8 w-full rounded-full inline-block"></p>
-            <h2 className="text-2xl lg:text-4xl font-medium h-6 lg:h-8 bg-slate-200 animate-pulse w-full text-slate-500">
-              🛒Loading...
-            </h2>
-            <p className="capitalize text-slate-400 bg-slate-200 min-w-[100px] animate-pulse h-6 lg:h-8  w-full"></p>
+            <p className="text-2xl lg:text-4xl font-medium h-6 lg:h-8 bg-slate-200 animate-pulse w-full"></p>
+            <p className="capitalize text-slate-400 bg-slate-200 min-w-[100px] animate-pulse h-6 lg:h-8 w-full"></p>
 
-            <div className="text-red-600 bg-slate-200 h-6 lg:h-8  animate-pulse flex items-center gap-1 w-full"></div>
+            <div className="text-red-600 bg-slate-200 h-6 lg:h-8 animate-pulse flex items-center gap-1 w-full"></div>
 
-            <div className="flex items-center gap-2 text-2xl lg:text-3xl font-medium my-1 h-6 lg:h-8  animate-pulse w-full">
+            <div className="flex items-center gap-2 text-2xl lg:text-3xl font-medium my-1 h-6 lg:h-8 animate-pulse w-full">
               <p className="text-red-600 bg-slate-200 w-full"></p>
               <p className="text-slate-400 line-through bg-slate-200 w-full"></p>
             </div>

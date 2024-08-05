@@ -12,7 +12,8 @@ const AdminPanel = () => {
     if (user?.role !== ROLE.ADMIN) {
       navigate("/");
     }
-  }, [navigate, user]);
+    // eslint-disable-next-line
+  }, [user]);
 
   return (
     <div className="min-h-[calc(100vh-120px)] md:flex hidden">

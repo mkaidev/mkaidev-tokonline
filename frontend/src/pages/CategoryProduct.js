@@ -7,7 +7,7 @@ import SummaryApi from "../common";
 const CategoryProduct = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
-  // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const location = useLocation();
   const urlSearch = new URLSearchParams(location.search);
@@ -39,8 +39,7 @@ const CategoryProduct = () => {
   };
 
   const handleSelectCategory = (e) => {
-    // eslint-disable-next-line no-unused-vars
-    const { name, value, checked } = e.target;
+    const { value, checked } = e.target;
 
     setSelectCategory((preve) => {
       return {
@@ -52,7 +51,7 @@ const CategoryProduct = () => {
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [filterCategoryList]);
 
   useEffect(() => {
@@ -76,7 +75,8 @@ const CategoryProduct = () => {
     });
 
     navigate("/product-category?" + urlFormat.join(""));
-  }, [navigate, selectCategory]);
+    // eslint-disable-next-line
+  }, [selectCategory]);
 
   const handleOnChangeSortBy = (e) => {
     const { value } = e.target;
@@ -141,7 +141,7 @@ const CategoryProduct = () => {
               {productCategory.map((categoryName, index) => {
                 return (
                   <div
-                    key={categoryName.value + index}
+                    key={"productCategory" + index}
                     className="flex items-center gap-3"
                   >
                     <input
@@ -162,7 +162,7 @@ const CategoryProduct = () => {
           </div>
         </div>
 
-        {/***right side ( product ) */}
+        {/** right side ( product ) */}
         <div className="px-4">
           <p className="font-medium text-slate-800 text-lg my-2">
             Search Results : {data.length}

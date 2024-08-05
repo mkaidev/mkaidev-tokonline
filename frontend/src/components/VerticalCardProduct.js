@@ -31,7 +31,7 @@ const VerticalCardProduct = ({ category, heading }) => {
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
   const scrollRight = () => {
@@ -66,14 +66,12 @@ const VerticalCardProduct = ({ category, heading }) => {
           ? loadingList.map((product, index) => {
               return (
                 <div
-                  key={product?.loadingList + index}
-                  className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow"
+                  key={"loadingList" + product + index}
+                  className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-white rounded-sm shadow"
                 >
                   <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center animate-pulse"></div>
                   <div className="p-4 grid gap-3">
-                    <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-slate-500 p-1 py-2 animate-pulse rounded-full bg-slate-200">
-                      🛒Loading...
-                    </h2>
+                    <p className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-slate-500 p-1 py-2 animate-pulse rounded-full bg-slate-200"></p>
                     <p className="capitalize text-slate-500 p-1 animate-pulse rounded-full bg-slate-200  py-2"></p>
                     <div className="flex gap-3">
                       <p className="text-red-600 font-medium p-1 animate-pulse rounded-full bg-slate-200 w-full  py-2"></p>
@@ -89,13 +87,13 @@ const VerticalCardProduct = ({ category, heading }) => {
                 <Link
                   key={product?.data + index}
                   to={"product/" + product?._id}
-                  className="w-full min-w-[280px]  md:min-w-[320px] max-w-[280px] md:max-w-[320px]  bg-white rounded-sm shadow"
+                  className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-white rounded-sm shadow"
                 >
                   <div className="bg-slate-200 h-48 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
                     <img
                       src={product.productImage[0]}
                       className="object-scale-down h-full hover:scale-110 transition-all mix-blend-multiply"
-                      alt=""
+                      alt="product"
                     />
                   </div>
                   <div className="p-4 grid gap-3">
