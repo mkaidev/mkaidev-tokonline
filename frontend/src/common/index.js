@@ -45,6 +45,10 @@ const SummaryApi = {
     url: `${backendDomain}/api/category-product`,
     method: "post",
   },
+  filterProduct: {
+    url: `${backendDomain}/api/filter-product`,
+    method: "post",
+  },
 };
 
 export default SummaryApi;
